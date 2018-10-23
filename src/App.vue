@@ -1,15 +1,15 @@
 <template>
     <div id="#app" >
       <router-view/>
-      <Footer></Footer>
+      <FooterGuide v-if="$route.meta.showFooter"/>
     </div>
 </template>
 <script>
-  import Footer from './components/Footer/Footer.vue'
+  import FooterGuide from './components/FooterGuide/FooterGuide.vue'
 
   export default {
     components:{
-      Footer
+      FooterGuide
     },
 
   }

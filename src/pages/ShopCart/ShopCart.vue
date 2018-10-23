@@ -1,31 +1,32 @@
 <template>
     <div class="shopCart">
       <h3 class="title">购物车</h3>
-      <ul class="exlain">
+      <ul class="center">
         <li class="expItem">
-        <i class="iconfont icon-duigou01"></i>
+        <i class="icon icon-duigou01"></i>
         <span>30天无忧退货</span>
       </li>
         <li class="expItem">
-          <i class="iconfont icon-duigou01"></i>
+          <i class="icon icon-duigou01"></i>
           <span>30天无忧退货</span>
         </li>
         <li class="expItem">
-          <i class="iconfont icon-duigou01"></i>
+          <i class="icon icon-duigou01"></i>
           <span>30天无忧退货</span>
         </li>
       </ul>
       <div class="cart">
         <div class="img">
-          <img src="./images/car1.png" alt="">
+          <img src="./images/cart.png" alt="">
         </div>
         <div class="txt">
           <div class="inner">
-            <div class="txtCon">去添加点什么吧</div>
-            <div class="txtBtn">登录</div>
+              <div class="txtCon">去添加点什么吧</div>
+              <div class="txtBtn">登录</div>
           </div>
         </div>
       </div>
+
 
     </div>
 </template>
@@ -39,61 +40,62 @@
 
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-.shopCart
-  position: relative
-  height: 100%
+  @import  '../../common/stylus/mixins.styl'
+  .shopCart
+    position relative
+    height 100%
 
+    .title
+      height 40px
+      font-size 20px
+      line-height  40px
+      text-align center
+      background #fff
+      color #333
+    .center
+      display flex
+      height 10px
+      line-height center
+      margin-top 13px
+      .expItem
+        flex 1
+        .icon
+          width: 4px
+          height: 4px
+          color #ccc
+        span
+          float left
 
-  .title
-    font-size: 0.768rem;
-    line-height: 1.877333333333333rem;
-    text-align: center;
-    background: #fff;
-    color: #333;
-  .explain
-    /*display: block;*/
-    display flex
-    z-index: 1;
-    height: 5px
-    padding: 0 5px;
+    .cart
 
-    .expItem
-      color black
-      align-items: center;
-      justify-content: space-between
-      display: flex;
-      span
-        float left
-  .cart
-    position: absolute;
-    top:525px
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    height:12px
-    text-align: center;
-    .img
-      display: inline-block;
-      width:200px
-      height: 80px
-      margin-bottom: 10px
-      background-position: center;
-      background-repeat: no-repeat;
-    .txt
-      font-size: 14px
-      line-height: 1;
-      color: #7f7f7f;
-      .inner
-        .txtCon
-          padding-bottom 20px
-        .txtBtn
-          margin: auto;
-          width:209px
-          height:45px
-          font-size: 18px
-          line-height: 45px
-          color: #fff;
-          background-color: #b4282d;
-          border-radius: 4px
+      position absolute
+      top 198px
+      bottom 0px
+      left 53px
+      right 0px
+      margin auto
+      .img
+        width: 124px
+        height: 124px
+      .txt
+        width: 400px
+        height: 100px
+        text-align center
+        .inner
+          margin-top:98px
+          margin-left :-112px
+          .txtCon
+            font-size 20px
+            color #ccc
+            margin 4px
+          .txtBtn
+            margin: auto;
+            width: 211px
+            height:40px
+            font-size: 16px
+            line-height:40px
+            color: #fff;
+            background-color: #b4282d;
+            border-radius: 2px
+
 </style>

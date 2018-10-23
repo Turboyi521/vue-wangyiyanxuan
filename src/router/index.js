@@ -13,21 +13,39 @@ export default   new VueRouter({
     {
       path: '/home',
       component: Home,
+      meta: {
+        showFooter: true // 标识需要显示footer
+      }
     },
     {
       path: '/list',
       component: List,
+      meta: {
+        showFooter: true // 标识需要显示footer
+      }
     },
     {
       path: '/person',
       component: Person,
-    }, {
+
+    },
+    {
       path: '/shopCart',
       component: ShopCart,
+      meta: {
+        showFooter: true // 标识需要显示footer
+      }
     },
     {
       path: '/topic',
       component: Topic,
+      meta: {
+        showFooter: true // 标识需要显示footer
+      }
+    },
+    {
+      path: '/',
+      redirect:'/home'
     },
 
   ]
