@@ -1,5 +1,6 @@
 <template>
   <div class="Three">
+      <!--    识物页-->
     <div class="Topic">
       <div class="header">
         <div class="row">
@@ -42,48 +43,37 @@
         <!-- 如果需要滚动条 -->
         <div class="swiper-scrollbar"></div>
       </div>
-
       <!--  第二个轮播图-->
-      <div class="goods-container">
-        <div class="images">
-          <div class="imagesList">
-            <a href="javascript:" class="link_to_food">
-              <div class="food_container">
-                <img src="./images/12.png">
-              </div>
-              <div class="name">夏季爆品</div>
-              <div class="nameDoc"> 媲美现煮</div>
-              <div class="price">¥98</div>
+      <div class="srcoll-wrapper">
+        <ul class="images">
+          <li >
+            <a href="javascript:;">
+              <img src="./images/01.jpg" alt="">
             </a>
-            <a href="javascript:" class="link_to_food">
-              <div class="food_container">
-                <img src="./images/12.png">
-              </div>
-              <div class="name">夏季爆品</div>
-              <div class="nameDoc"> 媲美现煮</div>
-              <div class="price">¥98</div>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/01.jpg" alt="">
             </a>
-            <a href="javascript:" class="link_to_food">
-              <div class="food_container">
-                <img src="./images/12.png">
-              </div>
-              <div class="name">夏季爆品</div>
-              <div class="nameDoc"> 媲美现煮</div>
-              <div class="price">¥98</div>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/01.jpg" alt="">
             </a>
-            <a href="javascript:" class="link_to_food">
-              <div class="food_container">
-                <img src="./images/12.png">
-              </div>
-              <div class="name">夏季爆品</div>
-              <div class="nameDoc"> 媲美现煮</div>
-              <div class="price">¥98</div>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/01.jpg" alt="">
             </a>
-          </div>
-        </div>
-
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/01.jpg" alt="">
+            </a>
+          </li>
+        </ul>
       </div>
-
+     <!--   为你推荐-->
       <div class="recommend">
         <h3 class="title">为你推荐</h3>
         <div class="itemMajor">
@@ -132,32 +122,137 @@
           </div>
         </div>
       </div>
-      <div class="topicShow">
-        <h3 class="title">十点一刻</h3>
-        <div class="ShowSwiper">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-               <a href="javascript:;">
-                 <div class="lineTitle">
-
-                   <span class="inner">今日话题</span>
-
-                 </div>
-                 <div class="inner">如果生命只剩一天</div>
-                 <div class="desc">你会选择怎么度过</div>
-                 <div class="joinInfo">7人参与话题</div>
-               </a>
+      <!--  十点一刻-->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="javascript:;">
+              <img src="./images/0.png" alt="">
+              <div class="lineTitle">
+                <span class="inner">今日话题</span>
               </div>
+              <div class="inner">如果生命只剩一天</div>
+              <div class="desc">你会选择怎么度过</div>
+              <div class="joinInfo">7人参与话题</div>
+            </a>
 
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;">
+              <img src="./images/0.png" alt="">
+              <div class="lineTitle">
+                <span class="inner">今日话题</span>
+              </div>
+              <div class="inner">如果生命只剩一天</div>
+              <div class="desc">你会选择怎么度过</div>
+              <div class="joinInfo">7人参与话题</div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;">
+              <img src="./images/0.png" alt="">
+              <div class="lineTitle">
+                <span class="inner">今日话题</span>
+              </div>
+              <div class="inner">如果生命只剩一天</div>
+              <div class="desc">你会选择怎么度过</div>
+              <div class="joinInfo">7人参与话题</div>
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+     <!-- 严选臻品-->
+      <div class="recommend">
+        <h3 class="title">为你推荐</h3>
+        <div class="itemMajor">
+          <a href="javascript:;">
+            <img src="./images/6.jpg" alt="">
+          </a>
+          <div class="info">
+            <div class="line1">
+              <div class="name">哇啊啊啊啊</div>
+              <div class="price">45yuan</div>
             </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
-            <!-- 如果需要滚动条 -->
+            <div class="line2">下下下下下下</div>
 
           </div>
         </div>
+        <div class="items">
+          <div class="topicInfo">
+            <div class="line1">
+              <div class="topicTitle">今年世界杯喝什么</div>
+            </div>
+            <div class="line2">
+              <div class="cont">救救急UI及UI记记账救救急UI及UI记记账</div>
+            </div>
+          </div>
+          <div class="topicPic">
+            <img src="./images/1.png" alt="">
+            <div class="topicTag">
+              <div class="tag">丁磊的好货推荐</div>
+            </div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="topicInfo">
+            <div class="line1">
+              <div class="topicTitle">今年世界杯喝什么</div>
+            </div>
+            <div class="line2">
+              <div class="cont">救救急UI及UI记记账救救急UI及UI记记账</div>
+            </div>
+          </div>
+          <div class="topicPic">
+            <img src="./images/1.png" alt="">
+            <div class="topicTag">
+              <div class="tag">丁磊的好货推荐</div>
+            </div>
+          </div>
+        </div>
       </div>
+     <!-- 严选look-->
+      <section class="look">
+        <h3 class="title">严选LOOK</h3>
+        <a href="javascript:;">
+          <img src="./images/01.jpg" alt="">
+          <div class="authorContainer">
+            <div class="author">
+              <div class="authorPic">
+                <img src="./images/1.png" alt="">
+              </div>
+              <div class="authorName">a****0</div>
+            </div>
+            <div class="desc">是我想要的风格。安装时除了有个螺丝孔有问题，后因有设备处理就很方便的解决问题了。大家看到都觉得很会买东西😀，希望严选多提供这类有品味的产品。</div>
+          </div>
+        </a>
+      </section>
+      <!--更多精彩-->
+      <section class="moveTopic">
+         <div class="moveTit">
+           ::before
+           <span class="inner">更多精彩</span>
+           ::after
+         </div>
+          <a href="javascript:;" class="item">
+            <img src="./images/02.jpg" alt="">
+            <div class="desc">今天一起做大儿童</div>
+          </a>
+          <a href="javascript:;" class="item">
+            <img src="./images/02.jpg" alt="">
+            <div class="desc">今天一起做大儿童</div>
+          </a>
+          <a href="javascript:;" class="item">
+            <img src="./images/02.jpg" alt="">
+            <div class="desc">今天一起做大儿童</div>
+          </a>
+          <a href="javascript:;" class="item">
+            <img src="./images/02.jpg" alt="">
+            <div class="desc">今天一起做大儿童</div>
+          </a>
+      </section>
 
     </div>
   </div>
@@ -177,6 +272,7 @@
     mounted(){
       new BScroll('.images',{click:true,scrollX:true}),
         new BScroll('.Three',{click:true,scrollY:true})
+        new BScroll('.srcoll-wrapper',{click:true,scrollX:true})
 
       new Swiper('.swiper-container', {
           pagination: {
@@ -219,7 +315,7 @@
             display: inline-block;
             vertical-align: middle;
             /*background red*/
-            margin-0 5px
+            margin 0 5px
             background-position: 0px -48px;
             .iconfont
               width: 40px
@@ -257,55 +353,32 @@
             img
               width: 100%
               height: 100%
-      .goods-container
-        width 100%
-        height 100%
+            .lineTitle
+            .inner
+              color red
+              text-align center
+              margin 5px 0
+            .desc
+              margin 5px 0
+            .joinInfo
+              margin 5px 0
+
+
+      .srcoll-wrapper
+
+
+
+        width: 1
+        margin: 0;
+        padding: 0;
+
         .images
-          background pink
-          width 100%
-          height 100%
-          .imagesList
-            width: 200%
-            black pink
-            display flex
-            justify-content center
-            align-items flex-start
-            /*flex-wrap wrap*/
-            display flex
-            .link_to_food
-              flex 1
-              .food_container
-                margin 0 10px
-                display block
-                width 75%
-                text-align center
-                padding-bottom 10px
-                font-size 0
-                img
-                  display inline-block
-                  width 60%
-                  height 100%
-                  text-align center
-              .name
-                display block
-                width 100%
-                text-align center
-                font-size 13px
-                color black
-                margin 2px 0
-              .nameDoc
-                text-align center
-                font-size 13px
-                color #CCC
-              .price
-                display block
-                width 100%
-                text-align center
-                font-size 13px
-                color black
-                margin 2px 0
-
-
+          width: 100%
+          float left
+          img
+            width: 25%
+            height: 25%
+            padding 20px 0
 
 
 
@@ -407,55 +480,57 @@
                 color: #333;
                 background-color: rgba(255,255,255,0.9);
 
-
-
-
-
-      .topicShow
+      .look
         padding 10px
         background #fff
         h3
           font-size 14px
           line-height 53px
           text-align center
-        .ShowSwiper
-          width: 375px
-          .swiper-container
-            .swiper-wrapper
-              .swiper-slide
-                background url("./images/0.png")
-                a
-                  position relative
-                  display block
-                  width: 150px
-                  height: 150px
-                  text-align: center;
-                  color: #333;
-                  padding: 5px
+        a
+          img
+            width: 100%
+            height: 100%
+          .authorContainer
+            padding 8px
+            .author
+              display flex
+              align-items: center;
+              .authorPic
+                flex 1
 
-                  font-size 16px
-                .lineTitle
-                  .inner
-                    color red
-                    text-align center
-                    margin 5px 0
-                  .desc
-                    margin 5px 0
-                  .joinInfo
-                    margin 5px 0
+                height: 28px
+                border-radius: 50%;
+                margin-right: 22px
+                border: 1px solid #d9d9d9;
+                overflow: hidden;
+              .authorName
+                flex 4
 
 
+            .desc
+              font-size: 14px
+              color: #7f7f7f;
+              line-height: 20px
+              padding: 8px
+      .moveTopic
+        margin: 0 0.64rem 0.64rem;
+        .moveTit
+          font-size 14px
+          line-height 63px
+          text-align center
+          color #000
 
-
-
-
-
-
-
-
-
-
-
+        .item
+          display: block;
+          padding: 10px
+          background: #fff;
+          color: #333;
+          margin-bottom:13px
+          img
+            width: 100%
+          .desc
+            margin-top:13px
 
 
 </style>
