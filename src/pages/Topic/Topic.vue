@@ -3,7 +3,7 @@
       <div class="header">
         <div class="row">
        <!--   左-->
-          <div class="home">
+          <div class="home"  @click="$router.push('/home')">
             <i class="iconfont icon-duigou01"></i>
           </div>
        <!--   中-->
@@ -12,8 +12,8 @@
           </div>
        <!--   右-->
           <div class="right">
-            <div class="search">
-              <a href="javascript">
+            <div class="search"  @click="$router.push('/shopCart')">
+              <a href="javascript"  >
                 <i class="iconfont icon-duigou01"></i>
               </a>
             </div>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-    <!--  轮播图-->
+    <!--  第一个轮播图-->
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -44,8 +44,8 @@
 
     <!--  第二个轮播图-->
       <div class="goods-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
+        <div class="images">
+          <div class="imagesList">
             <a href="javascript:" class="link_to_food">
               <div class="food_container">
                 <img src="./images/12.png">
@@ -80,24 +80,32 @@
           </a>
           </div>
         </div>
+
       </div>
     </div>
 </template>
 <script>
   import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.min.css'
+  import BScroll from 'better-scroll'
+  import {mapState} from 'Vuex'
+
   export default {
     data () {
       return {}
     },
     mounted(){
+      new BScroll('.images',{click:true,scrollX:true}),
       new Swiper('.swiper-container', {
-        loop: true, // 循环模式
-        // 如果需要分页器
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      })
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          loop: true
+        }),
+      this.$store.dispatch('getTopicData')
+    },
+     computed:{
+      ...mapState(['topicData'])
     }
 
   }
@@ -105,115 +113,118 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import  '../../common/stylus/mixins.styl'
-  .header
-    position relative
-    height 100%
-    background pink
-    display flex
-    .row
-      width: 367px
+  .Topic
+    overflow hidden
+    .header
+      position relative
+      height 100%
+      background pink
       display flex
-      background #CCC
-      height:40px
-      padding-left:4px
-      padding-right: 4px
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .home
-        width:40px
-        height: 40px
-        display: inline-block;
-        vertical-align: middle;
-        /*background red*/
-        margin-0 5px
-        background-position: 0px -48px;
-        .iconfont
-          width: 40px
-          height:40px
-          display: block;
-          background:url('./images/10.png')
-          background-position: 42px 242px;
-      .logo
-        img
-          flex 1
-          width 100px
-          height 40px
-      .right
-        box-sizing: border-box;
-        text-align: center;
-        .search
-          margin-right: 8px
-          float: left;
-
+      .row
+        width: 367px
+        display flex
+        background #CCC
+        height:40px
+        padding-left:4px
+        padding-right: 4px
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .home
+          width:40px
+          height: 40px
+          display: inline-block;
+          vertical-align: middle;
+          /*background red*/
+          margin-0 5px
+          background-position: 0px -48px;
           .iconfont
             width: 40px
             height:40px
             display: block;
             background:url('./images/10.png')
-            background-position: 0px -48px;
-        .cart
-          float: left;
+            background-position: 42px 242px;
+        .logo
+          img
+            flex 1
+            width 100px
+            height 40px
+        .right
+          box-sizing: border-box;
+          text-align: center;
+          .search
+            margin-right: 8px
+            float: left;
+
+            .iconfont
+              width: 40px
+              height:40px
+              display: block;
+              background:url('./images/10.png')
+              background-position: 0px -48px;
+          .cart
+            float: left;
 
 
 
 
-  .swiper-container
-    height 203px
-    .swiper-wrapper
-      margin-top 10px
-      .swiper-slide
-        margin 0 10px
-        img
-          width: 100%
-          height: 100%
-  .goods-container
-    width 100%
-    height 100%
-    .swiper-wrapper
-      background pink
+    .swiper-container
+      height 203px
+      .swiper-wrapper
+        margin-top 10px
+        .swiper-slide
+          margin 0 10px
+          img
+            width: 100%
+            height: 100%
+    .goods-container
       width 100%
       height 100%
-      .swiper-slide
-        black pink
-        display flex
-        justify-content center
-        align-items flex-start
-        /*flex-wrap wrap*/
-        .link_to_food
-        /*  background green*/
-          width 25%
-          margin 0 2px
-          .food_container
-            margin 0 10px
-            display block
-            width 100%
-            text-align center
-            padding-bottom 10px
-            font-size 0
-            img
-              display inline-block
+      .images
+        background pink
+        width 100%
+        height 100%
+        .imagesList
+          width: 200%
+          black pink
+          display flex
+          justify-content center
+          align-items flex-start
+          /*flex-wrap wrap*/
+          display flex
+          .link_to_food
+            flex 1
+            .food_container
+              margin 0 10px
+              display block
+              width 75%
+              text-align center
+              padding-bottom 10px
+              font-size 0
+              img
+                display inline-block
+                width 100%
+                height 100%
+                text-align center
+            .name
+              display block
               width 100%
-              height 100%
-          .name
-            display block
-            width 100%
-            text-align center
-            font-size 13px
-            color black
-            margin 2px 0
-          .nameDoc
-            text-align center
-            font-size 13px
-            color #CCC
-          .price
-            display block
-            width 100%
-            text-align center
-            font-size 13px
-            color black
-            margin 2px 0
+              text-align center
+              font-size 13px
+              color black
+              margin 2px 0
+            .nameDoc
+              text-align center
+              font-size 13px
+              color #CCC
+            .price
+              display block
+              width 100%
+              text-align center
+              font-size 13px
+              color black
+              margin 2px 0
 
 
 

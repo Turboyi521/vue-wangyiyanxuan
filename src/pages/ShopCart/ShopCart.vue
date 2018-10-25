@@ -22,7 +22,7 @@
         <div class="txt">
           <div class="inner">
               <div class="txtCon">去添加点什么吧</div>
-              <div class="txtBtn">登录</div>
+              <div class="txtBtn" @click="$router.push('/person')">登录</div>
           </div>
         </div>
       </div>
@@ -41,10 +41,12 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import  '../../common/stylus/mixins.styl'
+  body
+  overfow hidden
   .shopCart
+    overfow hidden
     position relative
     height 100%
-
     .title
       height 40px
       font-size 20px

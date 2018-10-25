@@ -1,7 +1,6 @@
 <template>
     <div class="home">
-
-        <header class="header">
+      <header class="header">
           <div class="logo">
             <img src="./images/9.png" alt="">
           </div>
@@ -11,53 +10,14 @@
             <input type="text" placeholder="找到456788款商品"  class="xsearch">
           </div>
         </header>
-       <!-- 横向滑动-->
-        <div class="wrapper">
-           <ul class="content">
-             <li>
-             <span>推荐</span>
-           </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-             <li>
-               <span>推荐</span>
-             </li>
-
-           </ul>
-        </div>
-        <!--轮播图-->
-        <div class="swiper-container">
+      <div class="wrapper" ref="wrapper">
+        <ul>
+          <li v-for="(name, index) in navlist" :key="index" :class="{'active':current === index}" @click="currentIndex(index)">
+            <span>{{name}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="./images/1.jpg" alt="">
@@ -75,73 +35,68 @@
           <div class="swiper-scrollbar"></div>
         </div>
       <!--  服务政策-->
-        <div class="explain">
-          <div class="expItem">
+      <div class="explain">
+          <div class="expItem"  v-for="(name,index) in homeData.policyDescList" :key="index">
             <i class="iconfont icon-duigou01"></i>
-            <span>网易自营品牌</span>
-          </div>
-          <div class="expItem">
-            <i class="iconfont icon-duigou01"></i>
-            <span>网易自营品牌</span>
-          </div>
-          <div class="expItem">
-            <i class="iconfont icon-duigou01"></i>
-            <span>网易自营品牌</span>
+            <span>{{name.desc}}</span>
           </div>
         </div>
-        <!--品牌制造商职工-->
-        <section class="GoodSale">
-      <!--    文字-->
+        <!--品牌制造商直供-->
+      <section class="GoodSale">
           <header class="header">
             <a  href="javascript:;">
               <span>品牌制造商直供</span>
               <i class="iconfont icon-right"></i>
             </a>
-        </header>
+          </header>
           <div class="goods">
-            <ul>
-              <li>
-                <a href="javascript:;">
-                  <div class="ctn">
-                    <h4>海外制造商</h4>
-                      <span class="proce">45元起</span>
-                  </div>
-                  <img src="./images/11.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <div class="ctn">
-                    <h4>海外制造商</h4>
-                    <span class="proce">45元起</span>
-                  </div>
-                  <img src="./images/11.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <div class="ctn">
-                    <h4>海外制造商</h4>
-                    <span class="proce">45元起</span>
-                  </div>
-                  <img src="./images/11.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <div class="ctn">
-                    <h4>海外制造商</h4>
-                    <span class="proce">45元起</span>
-                  </div>
-                  <img src="./images/11.png" alt="">
-                </a>
-              </li>
-            </ul>
+          <ul>
+            <li>
+              <a href="javascript:;">
+                <div class="ctn">
+                  <span class="title">尚硅谷尚硅谷尚硅谷尚硅谷</span>
+                  <span class="proce">188元起</span>
 
-          </div>
+                </div>
+                <img src="./images/11.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                <div class="ctn">
+                  <span class="title">尚硅谷尚硅谷尚硅谷尚硅谷</span>
+                  <span class="proce">188元起</span>
+
+                </div>
+                <img src="./images/11.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                <div class="ctn">
+                  <span class="title">尚硅谷尚硅谷尚硅谷尚硅谷</span>
+                  <span class="proce">188元起</span>
+
+                </div>
+                <img src="./images/11.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                <div class="ctn">
+                  <span class="title">尚硅谷尚硅谷尚硅谷尚硅谷</span>
+                  <span class="proce">188元起</span>
+
+                </div>
+                <img src="./images/11.png" alt="">
+              </a>
+            </li>
+
+          </ul>
+        </div>
         </section>
       <!--新品首发   -->
-        <div class="indexFloor">
+      <div class="indexFloor">
           <div class="move">
           <a href="">
             <span>新品首发</span>
@@ -153,8 +108,8 @@
           </a>
         </div>
           <div class="goods-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
+            <div class="images">
+              <div class="imagesList">
                 <a href="javascript:" class="link_to_food">
                   <div class="food_container">
                     <img src="./images/12.png">
@@ -189,6 +144,7 @@
                 </a>
               </div>
             </div>
+
           </div>
       </div>
     </div>
@@ -197,12 +153,18 @@
   import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.min.css'
   import BScroll from 'better-scroll'
+  import {mapState,mapGetters} from 'Vuex'
+
   export default {
     data () {
-      return {}
+      return {
+        navlist:['推荐', '居家', '配件', '服装', '电器', '洗护', '饮食', '餐厨', '婴童', '文体', '特色区'],
+        current :0
+      }
     },
     mounted(){
       new BScroll('.wrapper',{click:true,scrollX:true})
+      new BScroll('.images',{click:true,scrollX:true})
 
       new Swiper('.swiper-container', {
         pagination: {
@@ -210,6 +172,11 @@
         },
         loop: true
       })
+    },
+    computed:{
+      ...mapState(['homeData']),
+      ...mapGetters(['newHome'])
+
     }
 
   }
@@ -244,9 +211,8 @@
           out-line none
 
     .wrapper
-      .content
+       ul
         width: 200%
-        display flex
         height: 30px
         li
           float left
@@ -295,8 +261,8 @@
       width: 100%
       height: 100%
       .header
-        width: 100%
 
+        width: 100%
         display flex
         height 40px
         font-size 20px
@@ -307,26 +273,53 @@
           color #000
           display flex
       .goods
-        width:100%
+        margin-bottom 4px
         ul
-          background #fff
-          overflow hidden
+          overflow  hidden
+          marign 0 10px
+          position relative
+          marign 0 10px
+          height 130px
           li
             width: 40%
+            height: 40%
             float left
+            margin-right 3px
+            position relative
+            margin-bottom: 4px
+            overflow hidden
             background #ccc
-            margin 10px 10px
-            .ctn
-              font-size 20px
-              color #000
-          img
-            width: 100%
-            height: 100%
+            a
+              display block
+              width: 100%
+              height: 100%
+              color black
+              text-decoration none
+              display flex
+              .ctn
+                position: absolute
+                left 0px
+                right 0px
+                display block
+                padding 2px 0 0 2px
+                font-size 12px
+                .title
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  display block
+                  font-size: 18px
+                  margin-bottom: 10px
+                .proce
+                  font-size: 12px
+                  margin-bottom:10px
+              img
+                width: 100%
+                height: 100%
 
     .indexFloor
       width: 100%
       height: 100%
-  /*    background lightseagreen*/
       .move
         background lightseagreen
         height 106px
@@ -348,24 +341,24 @@
       .goods-container
         width 100%
         height 100%
-        .swiper-wrapper
+        .images
           background pink
           width 100%
           height 100%
-          .swiper-slide
+          .imagesList
+            width: 200%
             black pink
             display flex
             justify-content center
             align-items flex-start
             /*flex-wrap wrap*/
+            display flex
             .link_to_food
-              /*  background green*/
-              width 25%
-              margin 0 2px
+              flex 1
               .food_container
                 margin 0 10px
                 display block
-                width 100%
+                width 75%
                 text-align center
                 padding-bottom 10px
                 font-size 0
@@ -373,6 +366,7 @@
                   display inline-block
                   width 100%
                   height 100%
+                  text-align center
               .name
                 display block
                 width 100%

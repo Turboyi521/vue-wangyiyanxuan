@@ -14,7 +14,7 @@
         <div class="leftMenu">
           <div class="inner">
             <ul>
-              <li class="item " :class="on">
+              <li class="item "  >
                 <a href="javascript:;">推荐专区</a>
               </li>
               <li class="item ">
@@ -29,10 +29,6 @@
               <li class="item ">
                 <a href="javascript:;">推荐专区</a>
               </li>
-
-
-
-
             </ul>
           </div>
         </div>
@@ -42,41 +38,83 @@
             <div class="banner">
               <img src="./images/1.jpg" alt="">
             </div>
-            <div class="middle">
-              <span class="text">--居家分类--</span>
-            </div>
+
             <section class="bellow">
               <ul class="list">
                 <li class="item">
-                  <a href="javascript:;">
-                  <img src="./images/0.png" alt="">
-                  <span>清凉</span>
-                </a>
-                  <a href="javascript:;">
-                    <img src="./images/0.png" alt="">
-                    <span>清凉</span>
-                  </a>
-                  <a href="javascript:;">
-                    <img src="./images/0.png" alt="">
-                    <span>清凉</span>
-                  </a>
-                  <a href="javascript:;">
-                    <img src="./images/0.png" alt="">
-                    <span>清凉</span>
-                  </a>
-                  <a href="javascript:;">
-                  <img src="./images/0.png" alt="">
-                  <span>清凉</span>
-                </a>
-                  <a href="javascript:;">
-                  <img src="./images/0.png" alt="">
-                  <span>清凉</span>
-                </a>
-                  <a href="javascript:;">
+                    <a href="javascript:;">
                   <img src="./images/0.png" alt="">
                   <span>清凉</span>
                 </a>
                 </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="javascript:;">
+                    <img src="./images/0.png" alt="">
+                    <span>清凉</span>
+                  </a>
+                </li>
+
+
               </ul>
             </section>
           </div>
@@ -85,10 +123,16 @@
     </div>
 </template>
 <script>
+
   export default {
     data () {
       return {}
+    },
+    mounted(){
+      this.$store.dispatch('getNavData')
+
     }
+
 
   }
 
@@ -134,6 +178,8 @@
         border-right 2px solid #CCC
         .inner
           width: 100%;
+          a
+            font-color black
           .item
             width: 100%;
             height:  64px
@@ -151,25 +197,16 @@
             img
               width: 100%
               height: 100%
-          .middle
-            height: 60px
-            line-height: 60px
-            text-align: center;
-            color:  #fff
-            .text
-                position relative
-              color: #333
 
           .bellow
             width: 300px
             height: 300px
             .list
-              width: 528px
-              height: 620px
+              clearFix()
               .item
-
+                float left
                 margin-right: 3px
-                width: 100px
+                width: 91px
                 a
                   span
                     display: block;
