@@ -5,8 +5,8 @@ import {
 } from './mutations-type'
 import {
   reqHomeData,
-  reqTopicData,
   reqNavData
+
 } from '../api'
 
 export default {
@@ -18,14 +18,13 @@ export default {
       callback && callback()
     }
   },
-  async getTopicData ({commit}) {
-      const result = await reqTopicData()
-    /*  console.log(result, 'xxxxxxxxxxxxxxxxxxxxxxxx')*/
-      if (result.code === 0) {
-        const topicData = result.data
-        commit(RECEIVE_TOPICDATA, {topicData})
-      }
-    },
+  async getNavData ({commit},callback) {
+    const result = await reqNavData()
+    if (result.code === 0) {
+      const navData = result.data
+      commit(RECEIVE_NAVDATA, {navData})
+    }
+  },
 
 
 
