@@ -28,14 +28,8 @@
       <!--  第一个轮播图-->
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./images/1.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/2.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/3.jpg" alt="">
+          <div class="swiper-slide" v-for="(name,index) in topicData.banner" :key="index">
+            <img :src="name.picUrl" alt="">
           </div>
         </div>
         <!-- 如果需要分页器 -->
@@ -46,46 +40,30 @@
       <!--  第二个轮播图-->
       <div class="srcoll-wrapper">
         <ul class="images">
-          <li >
-            <a href="javascript:;">
-              <img src="./images/01.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/01.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/01.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/01.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/01.jpg" alt="">
-            </a>
+          <li  v-for="(name,index) in topicData.column" :key="index">
+
+              <img :src="name.picUrl" alt="">
+              <div class="tNum">
+                <span class="tNumCon">{{name.articleCount}}</span>
+              </div>
+              <div class="title">{{name.title}}</div>
+
           </li>
         </ul>
       </div>
      <!--   为你推荐-->
-      <div class="recommend">
-        <h3 class="title">为你推荐</h3>
-        <div class="itemMajor">
+      <div class="recommend"  v-for="  (name,index) in topicData.recommend" :key="index">
+        <h3 class="title">{{name.name}}</h3>
+        <div class="itemMajor" v-for="(nav,name) in name.Item" :key="index">
           <a href="javascript:;">
-            <img src="./images/6.jpg" alt="">
+            <img :src="nav.picUrl" alt="">
           </a>
           <div class="info">
             <div class="line1">
-              <div class="name">哇啊啊啊啊</div>
-              <div class="price">45yuan</div>
+              <div class="name">{{nav.name}}</div>
+              <div class="price">{{nav.priceInfo}}yuan</div>
             </div>
-            <div class="line2">下下下下下下</div>
+            <div class="line2">少年</div>
 
           </div>
         </div>
@@ -268,22 +246,23 @@
     data () {
       return {}
     },
-
     mounted(){
-      new BScroll('.images',{click:true,scrollX:true}),
-        new BScroll('.Three',{click:true,scrollY:true})
-        new BScroll('.srcoll-wrapper',{click:true,scrollX:true})
+      this.$store.dispatch('getTopicData')
+      new BScroll('.srcoll-wrapper',{click:true,scrollX:true}),
+      new BScroll('.Three',{click:true,scrollY:true}),
+      new BScroll('.srcoll-wrapper',{click:true,scrollX:true}),
 
       new Swiper('.swiper-container', {
           pagination: {
             el: '.swiper-pagination',
           },
           loop: true
-        }),
-      this.$store.dispatch('getTopicData')
+        })
+
     },
-
-
+    computed:{
+      ...mapState(['topicData'])
+    }
   }
 
 </script>
@@ -365,23 +344,47 @@
 
 
       .srcoll-wrapper
-
-
-
         width: 1
         margin: 0;
         padding: 0;
-
         .images
-          width: 100%
-          float left
-          img
-            width: 25%
-            height: 25%
-            padding 20px 0
+          width: 200%
+          clearFix()
+          li
+            width: 120px
+            height: 80px
+            float left
+            position relative
+            img
+              width: 100%
+              height: 100%
+            .tNum
+              position absolute
+              top: 0;
+              right: 0;
+              color: red;
+              width: 40px
+              height: 20px
+              border-radius:2px
+              display block
+              .tNumCon
+                position: absolute;
+                top: 0;
+                right: 2px
+                width: 80px;
+                height: 20px
+                line-height: 10px
+                font-size: 12
+                text-align: right;
+                margin 9px
 
-
-
+            .title
+              color: #333;
+              font-size: 14
+              line-height: 1;
+              text-align: center;
+              height: 15px
+              margin-top 3px
       .recommend
         padding 10px
         background #fff

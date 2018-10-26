@@ -31,7 +31,7 @@
               <ul class="list">
                 <li class="item" v-for="(item,index) in nav.subCateList" :key="index">
                     <a href="javascript:;">
-                  <img :src="item.bannerUrl" alt="">
+                  <img :src="item.wapBannerUrl" alt="">
                   <span>{{item.name}}</span>
                 </a>
                 </li>
