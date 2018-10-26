@@ -60,7 +60,7 @@ import BScroll from 'better-scroll'
       this.$store.dispatch('getNavData')
 
       new BScroll('.leftMenu',{click:true,scrollY:true})
-      new BScroll('.rightMenu',{click:true,scrollY:true})
+
     },
     computed:{
       ...mapState(['navData']),

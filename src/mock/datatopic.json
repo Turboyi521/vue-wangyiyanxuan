@@ -407,7 +407,8 @@
   "hasMore": true,
   "recommend": {
     "name": "为你推荐",
-    "Item": [{
+    "Item": [
+      {
       "topicId": 2555,
       "title": "如何做清新的白衣少年",
       "subtitle": null,
@@ -433,7 +434,8 @@
       "color": null,
       "typeName": "严选推荐",
       "desc": null
-    }, {
+    },
+      {
       "topicId": 2564,
       "title": "今年世界杯喝什么？",
       "subtitle": null,
@@ -459,7 +461,8 @@
       "color": null,
       "typeName": "丁磊的好货推荐",
       "desc": null
-    }, {
+    },
+      {
       "topicId": 2513,
       "title": "没有软木拖，怎么过夏天",
       "subtitle": null,
@@ -485,7 +488,8 @@
       "color": null,
       "typeName": "挑款师推荐",
       "desc": null
-    }]
+    }
+    ]
   },
   "tenfifteen": [{
     "desc": "你会选择怎么度过",
